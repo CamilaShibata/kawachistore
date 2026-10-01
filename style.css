@@ -1,0 +1,58 @@
+/* Reset CSS */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: 0;
+}
+
+body {
+  font-family: Nunito, sans-serif;
+  font-weight: 500;
+}
+
+.header {
+  display: flex;
+  height: 70px;
+  width: 100%;
+  background-color: #ebe0e0;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.header img {
+  height: 60px;
+}
+
+.header ul {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+  margin: 0 15px 0 0;
+}
+
+.header ul li a {
+  text-decoration: none;
+  color: #000;
+  font-size: 18px;
+}
+
+.banner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 300px;
+  width: 100%;
+  margin-bottom: 200px;
+}
+
+.banner h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.banner img {
+  height: 300px;
+  width: 100%;
+}
