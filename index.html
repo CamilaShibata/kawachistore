@@ -13,32 +13,37 @@
     <link rel="stylesheet" href="style.css" />
     <title>Kawachi Store</title>
   </head>
+
   <!-- Estrutura e Conteúdo da Página -->
-  <body>
+  <body id="home">
     <!-- Cabeçalho da página -->
     <header class="header">
       <img
         src="./assets/LOGO KAWACHI STORE horizontal.png"
         alt="Logo Kawachi Store"
       />
+
       <!-- Menu de navegação -->
       <nav class="menu">
-        <ul>
-          <li><a href="#" id="home">Home</a></li>
-          <li><a href="#" id="sobre">Sobre</a></li>
-          <li><a href="#" id="produtos">Produtos</a></li>
+        <ul class="menu-list">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#produtos">Produtos</a></li>
         </ul>
       </nav>
     </header>
-    <div class="banner">
+
+    <!-- Banner principal -->
+    <section class="banner">
       <h1>Bem-vindo à Kawachi Store</h1>
       <img
         src="./assets/Produtos personalizados.png"
-        alt="Logo Kawachi Store"  
+        alt="Logo Kawachi Store"
       />
-    </div>
+    </section>
+
     <!-- Seção sobre a empresa -->
-    <div class="sobre">
+    <section id="sobre" class="sobre">
       <h1>Sobre a Kawachi Store</h1>
       <p>
         A Kawachi Store é uma loja especializada em produtos de alta qualidade,
@@ -47,16 +52,18 @@
         experiência de compra excepcional, com produtos cuidadosamente
         selecionados e um atendimento ao cliente dedicado.
       </p>
-    </div>
+    </section>
+
     <!-- Seção de produtos -->
-    <div class="produtos">
+    <section id="produtos" class="produtos">
       <h1>Produtos</h1>
       <p>
         Nossos produtos são cuidadosamente selecionados para oferecer a melhor
         qualidade e design. Temos uma ampla variedade de itens para todos os
         gostos e necessidades.
       </p>
-    </div>
+    </section>
+
     <!-- Rodapé da página -->
     <footer class="footer"></footer>
   </body>
