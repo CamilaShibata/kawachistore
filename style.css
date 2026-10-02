@@ -60,44 +60,64 @@ body {
 .banner img {
   height: calc(100vh - 150px);
   width: 100%;
-  max-width: 800px;
+  max-width: 1300px;
 }
 
 .sobre {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 600px;
-  padding: 100px 0;
+  height: 700px;
+  padding: 80px 10px;
 }
 
-.sobre h1 {
-  font-size: 25px;
-  margin-bottom: 20px;
+.sobre h2 {
+  font-size: 30px;
+  padding: 20px;
 }
 
 .sobre p {
-  font-size: 16px;
+  font-size: 18px;
   text-align: justify;
-  max-width: 800px;
-  margin: 0 10px;
+  max-width: 1200px;
+}
+
+.sobre img {
+  height: 300px;
+  padding: 50px;
 }
 
 .produtos {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 150px;
+  height: 700px;
+  padding: 80px 10px;
 }
 
-.produtos h1 {
-  font-size: 25px;
-  margin-bottom: 20px;
+.produtos h2 {
+  font-size: 30px;
+  padding: 20px;
 }
 
 .produtos p {
-  font-size: 16px;
+  font-size: 18px;
   text-align: justify;
-  max-width: 800px;
-  margin: 0 10px;
+  max-width: 1200px;
+}
+
+.produtos-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 0 20px;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 750px;
+}
+
+.produtos-grid img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
 }
