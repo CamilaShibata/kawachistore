@@ -58,7 +58,7 @@ body {
 }
 
 .banner img {
-  height: calc(100vh - 150px);
+  height: calc(100vh - 200px);
   width: 100%;
   max-width: 1300px;
 }
@@ -68,12 +68,12 @@ body {
   flex-direction: column;
   align-items: center;
   height: 700px;
-  padding: 80px 10px;
+  padding: 70px 10px;
 }
 
 .sobre h2 {
   font-size: 30px;
-  padding: 20px;
+  padding: 10px;
 }
 
 .sobre p {
@@ -92,12 +92,12 @@ body {
   flex-direction: column;
   align-items: center;
   height: 700px;
-  padding: 80px 10px;
+  padding: 70px 10px;
 }
 
 .produtos h2 {
   font-size: 30px;
-  padding: 20px;
+  padding: 10px;
 }
 
 .produtos p {
@@ -109,15 +109,28 @@ body {
 .produtos-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  padding: 0 20px;
+  gap: 5px;
+  padding: 20px 20px;
   box-sizing: border-box;
   width: 100%;
-  max-width: 750px;
+  max-width: 700px;
 }
 
 .produtos-grid img {
   width: 100%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 100%;
+  background-color: #ebe0e0;
+  font-size: 16px;
+  position: sticky;
+  bottom: 0;
+  z-index: 8;
 }
