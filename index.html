@@ -1,82 +1,132 @@
 <!doctype html>
-<html lang="pt-br">
+<html lang="pt-BR">
   <!-- Configurações da página -->
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Kawachi Store: camisetas, canecas e produtos personalizados de alta qualidade."
+    />
+    <title>Kawachi Store | Produtos personalizados</title>
+
+    <!-- Fonte Nunito (Google Fonts) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Nunito:wght@200..1000&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
+
     <link rel="stylesheet" href="style.css" />
-    <title>Kawachi Store</title>
   </head>
 
   <!-- Estrutura e Conteúdo da Página -->
-  <body id="home">
+  <body id="topo">
+    <!-- Atalho para quem navega pelo teclado ou leitor de tela -->
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
     <!-- Cabeçalho da página -->
     <header class="header">
-      <img
-        src="./assets/LOGO KAWACHI STORE horizontal.png"
-        alt="Logo Kawachi Store"
-      />
+      <a href="#topo" class="logo-link">
+        <img
+          class="logo"
+          src="./assets/logo-horizontal.png"
+          alt="Kawachi Store - voltar ao topo"
+        />
+      </a>
 
       <!-- Menu de navegação -->
-      <nav class="menu">
+      <nav class="menu" aria-label="Menu principal">
         <ul class="menu-list">
-          <li><a href="#home">Home</a></li>
+          <li><a href="#topo">Home</a></li>
           <li><a href="#sobre">Sobre</a></li>
           <li><a href="#produtos">Produtos</a></li>
         </ul>
       </nav>
     </header>
 
-    <!-- Banner principal -->
-    <section class="banner">
-      <h1>Bem-vindo à Kawachi Store</h1>
-      <img
-        src="./assets/Produtos personalizados.png"
-        alt="Logo Kawachi Store"
-      />
-    </section>
+    <!-- Conteúdo principal -->
+    <main id="conteudo">
+      <!-- Banner principal -->
+      <section class="banner">
+        <h1>Bem-vindo à Kawachi Store</h1>
+        <img
+          src="./assets/banner-produtos-personalizados.png"
+          alt="Camisetas e canecas personalizadas da Kawachi Store"
+          loading="lazy"
+        />
+      </section>
 
-    <!-- Seção sobre a empresa -->
-    <section id="sobre" class="sobre">
-      <h2>Sobre a Kawachi Store</h2>
-      <p>
-        A Kawachi Store é uma loja especializada em produtos de alta qualidade,
-        oferecendo uma ampla variedade de itens para atender às necessidades e
-        preferências dos nossos clientes. Nosso compromisso é proporcionar uma
-        experiência de compra excepcional, com produtos cuidadosamente
-        selecionados e um atendimento ao cliente dedicado.
-      </p>
-      <img
-        src="./assets/LOGO KAWACHI STORE icon.png"
-        alt="Logo Kawachi Store"
-      />
-    </section>
+      <!-- Seção sobre a empresa -->
+      <section id="sobre" class="secao sobre">
+        <h2>Sobre a Kawachi Store</h2>
+        <p>
+          A Kawachi Store é uma loja especializada em produtos de alta
+          qualidade, oferecendo uma ampla variedade de itens para atender às
+          necessidades e preferências dos nossos clientes. Nosso compromisso é
+          proporcionar uma experiência de compra excepcional, com produtos
+          cuidadosamente selecionados e um atendimento ao cliente dedicado.
+        </p>
+        <!-- alt vazio: imagem apenas decorativa -->
+        <img
+          class="sobre-icone"
+          src="./assets/logo-icone.png"
+          alt=""
+          loading="lazy"
+        />
+      </section>
 
-    <!-- Seção de produtos -->
-    <section id="produtos" class="produtos">
-      <h2>Produtos</h2>
-      <p>
-        Nossos produtos são cuidadosamente selecionados para oferecer a melhor
-        qualidade e design. Temos uma ampla variedade de itens para todos os
-        gostos e necessidades.
-      </p>
-      <div class="produtos-grid">
-        <img src="./assets/copos.jpg" alt="" />
-        <img src="./assets/images (1).jpg" alt="" />
-        <img src="./assets/images (2).jpg" alt="" />
-        <img src="./assets/images (3).jpg" alt="" />
-        <img src="./assets/images.jpg" alt="" />
-        <img src="./assets/kit.jpg" alt="" />
-      </div>
-    </section>
+      <!-- Seção de produtos -->
+      <section id="produtos" class="secao produtos">
+        <h2>Produtos</h2>
+        <p>
+          Nossos produtos são cuidadosamente selecionados para oferecer a melhor
+          qualidade e design. Temos uma ampla variedade de itens para todos os
+          gostos e necessidades.
+        </p>
+        <div class="produtos-grid">
+          <!-- Troque cada alt por uma descrição real do produto -->
+          <img
+            src="./assets/copos.jpg"
+            alt="Copos personalizados"
+            loading="lazy"
+          />
+          <img
+            src="./assets/produto-1.jpg"
+            alt="Produto personalizado 1"
+            loading="lazy"
+          />
+          <img
+            src="./assets/produto-2.jpg"
+            alt="Produto personalizado 2"
+            loading="lazy"
+          />
+          <img
+            src="./assets/produto-3.jpg"
+            alt="Produto personalizado 3"
+            loading="lazy"
+          />
+          <img
+            src="./assets/produto-4.jpg"
+            alt="Produto personalizado 4"
+            loading="lazy"
+          />
+          <img
+            src="./assets/kit.jpg"
+            alt="Kit de produtos personalizados"
+            loading="lazy"
+          />
+        </div>
+      </section>
+    </main>
 
     <!-- Rodapé da página -->
-    <footer class="footer">Feito com ❤️ pela Kawachi Store</footer>
+    <footer class="footer">
+      <p>Feito com ❤️ pela Kawachi Store</p>
+    </footer>
+
+    <!-- Quando começar a usar JavaScript, descomente a linha abaixo -->
+    <!-- <script src="script.js" defer></script> -->
   </body>
 </html>

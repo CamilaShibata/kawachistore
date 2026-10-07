@@ -1,220 +1,231 @@
-/* Reset CSS */
-* {
+/* ==========================================================
+   1. VARIÁVEIS (design tokens)
+   Mude uma cor aqui e ela muda no site inteiro.
+   ========================================================== */
+:root {
+  --cor-fundo-barra: #ebe0e0;
+  --cor-texto: #222;
+  --cor-destaque: #d62828;
+
+  --altura-header: 70px;
+  --largura-maxima: 1200px;
+  --espaco: clamp(16px, 4vw, 40px);
+}
+
+/* ==========================================================
+   2. RESET
+   ========================================================== */
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  outline: 0;
+  /* Removi "outline: 0": ele apagava o contorno de foco e
+     impedia quem usa o teclado de ver onde está. */
 }
 
+html {
+  scroll-behavior: smooth;
+  /* Evita que o cabeçalho fixo cubra o título da seção
+     quando clicamos no menu. */
+  scroll-padding-top: var(--altura-header);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* ==========================================================
+   3. BASE
+   ========================================================== */
 body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column; /* empurra o rodapé para o fim da tela */
   font-family: Nunito, sans-serif;
   font-weight: 500;
+  color: var(--cor-texto);
+  line-height: 1.6;
 }
 
+main {
+  flex: 1; /* ocupa o espaço que sobra entre header e footer */
+}
+
+/* Link de acessibilidade: só aparece quando recebe foco (Tab) */
+.skip-link {
+  position: absolute;
+  left: 8px;
+  top: -100px;
+  background: #000;
+  color: #fff;
+  padding: 8px 12px;
+  z-index: 100;
+}
+
+.skip-link:focus {
+  top: 8px;
+}
+
+/* ==========================================================
+   4. CABEÇALHO E MENU
+   ========================================================== */
 .header {
   display: flex;
-  height: 70px;
-  width: 100%;
-  background-color: #ebe0e0;
   justify-content: space-between;
   align-items: center;
+  gap: 12px;
+  min-height: var(--altura-header);
+  padding: 5px var(--espaco);
+  background-color: var(--cor-fundo-barra);
   position: sticky;
   top: 0;
-  z-index: 9;
+  z-index: 10;
 }
 
-.header img {
-  height: 60px;
-  margin: 0 0 0 15px;
+.logo {
+  height: clamp(36px, 8vw, 60px); /* cresce e encolhe sozinho */
+  width: auto;
 }
 
 .menu-list {
   display: flex;
   list-style: none;
-  gap: 30px;
-  margin: 0 15px 0 0;
+  gap: clamp(12px, 3vw, 30px);
 }
 
 .menu a {
   text-decoration: none;
   color: #000;
-  font-size: 18px;
+  font-size: clamp(14px, 2.5vw, 18px);
+  padding: 4px 2px;
 }
 
-.menu a:hover {
-  color: red;
+.menu a:hover,
+.menu a:focus-visible {
+  color: var(--cor-destaque);
 }
 
+a:focus-visible {
+  outline: 2px solid var(--cor-destaque);
+  outline-offset: 3px;
+}
+
+/* ==========================================================
+   5. BANNER
+   ========================================================== */
 .banner {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
+  padding: var(--espaco);
 }
 
 .banner h1 {
-  font-size: 40px;
-  padding: 20px 0;
+  font-size: clamp(1.4rem, 5vw, 2.5rem);
+  text-align: center;
+  padding-bottom: 20px;
 }
 
 .banner img {
-  height: calc(100vh - 200px);
   width: 100%;
   max-width: 1300px;
+  max-height: calc(100vh - 200px);
+  object-fit: contain; /* nunca distorce a imagem */
 }
 
-.sobre {
+/* ==========================================================
+   6. SEÇÕES (regras compartilhadas por Sobre e Produtos)
+   ========================================================== */
+.secao {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 700px;
-  padding: 70px 10px;
+  padding: calc(var(--espaco) * 1.5) var(--espaco);
+  /* Sem "height: 700px": altura fixa fazia o conteúdo vazar
+     em celulares. Agora a seção cresce conforme o conteúdo. */
 }
 
-.sobre h2 {
-  font-size: 30px;
-  padding: 10px;
+.secao h2 {
+  font-size: clamp(1.2rem, 4vw, 1.9rem);
+  padding-bottom: 12px;
+  text-align: center;
 }
 
-.sobre p {
-  font-size: 18px;
+.secao p {
+  font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+  max-width: var(--largura-maxima);
   text-align: justify;
-  max-width: 1200px;
+  hyphens: auto; /* evita "buracos" no texto justificado */
 }
 
-.sobre img {
-  height: 300px;
-  padding: 50px;
+.sobre-icone {
+  height: clamp(120px, 25vw, 300px);
+  width: auto;
+  padding-top: var(--espaco);
 }
 
-.produtos {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 700px;
-  padding: 70px 10px;
-}
-
-.produtos h2 {
-  font-size: 30px;
-  padding: 10px;
-}
-
-.produtos p {
-  font-size: 18px;
-  text-align: justify;
-  max-width: 1200px;
-}
-
+/* ==========================================================
+   7. GRADE DE PRODUTOS
+   ========================================================== */
 .produtos-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 5px;
-  padding: 20px 20px;
-  box-sizing: border-box;
+  /* "auto-fit + minmax": o navegador decide quantas colunas
+     cabem. Celular = 2, tablet = 3, desktop = 4+. */
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 12px;
   width: 100%;
-  max-width: 700px;
+  max-width: 900px;
+  padding-top: var(--espaco);
 }
 
 .produtos-grid img {
   width: 100%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.2s ease;
 }
 
+.produtos-grid img:hover {
+  transform: scale(1.03);
+}
+
+/* ==========================================================
+   8. RODAPÉ
+   ========================================================== */
 .footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 50px;
-  width: 100%;
-  background-color: #ebe0e0;
-  font-size: 16px;
-  position: sticky;
-  bottom: 0;
-  z-index: 8;
+  min-height: 50px;
+  padding: 10px var(--espaco);
+  background-color: var(--cor-fundo-barra);
+  font-size: clamp(12px, 2.5vw, 16px);
+  /* Não é mais "sticky": ele cobria o conteúdo da tela. */
 }
 
-@media (max-width: 530px) {
-  .header img {
-    height: 50px;
-  }
-
-  .menu a {
-    font-size: 16px;
-  }
-
-  .banner h1 {
-    font-size: 30px;
-  }
-
-  .banner img {
-    min-width: 520px;
-  }
-
-  .sobre h2 {
-    font-size: 20px;
-  }
-
-  .sobre p {
-    font-size: 15px;
-  }
-
-  .sobre img {
-    height: 200px;
-  }
-
-  .produtos h2 {
-    font-size: 20px;
-  }
-
-  .produtos p {
-    font-size: 15px;
-  }
-
-  .footer {
-    font-size: 14px;
+/* ==========================================================
+   9. AJUSTE PARA TELAS MUITO PEQUENAS
+   Só o que o clamp() não resolve sozinho.
+   ========================================================== */
+@media (max-width: 400px) {
+  .header {
+    flex-direction: column;
+    padding-block: 8px;
   }
 }
 
-@media (max-width: 403px) {
-  .header img {
-    height: 40px;
+/* Respeita quem desativou animações no sistema */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
   }
 
-  .menu a {
-    font-size: 14px;
-  }
-
-  .banner h1 {
-    font-size: 20px;
-  }
-
-  .banner img {
-    height: calc(100vh - 160px);
-  }
-
-  .sobre h2 {
-    font-size: 15px;
-  }
-
-  .sobre p {
-    font-size: 12px;
-  }
-
-  .sobre img {
-    height: 150px;
-  }
-
-  .produtos h2 {
-    font-size: 15px;
-  }
-
-  .produtos p {
-    font-size: 12px;
-  }
-
-  .footer {
-    font-size: 12px;
+  .produtos-grid img {
+    transition: none;
   }
 }
