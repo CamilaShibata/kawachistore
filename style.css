@@ -134,3 +134,87 @@ body {
   bottom: 0;
   z-index: 8;
 }
+
+@media (max-width: 530px) {
+  .header img {
+    height: 50px;
+  }
+
+  .menu a {
+    font-size: 16px;
+  }
+
+  .banner h1 {
+    font-size: 30px;
+  }
+
+  .banner img {
+    min-width: 520px;
+  }
+
+  .sobre h2 {
+    font-size: 20px;
+  }
+
+  .sobre p {
+    font-size: 15px;
+  }
+
+  .sobre img {
+    height: 200px;
+  }
+
+  .produtos h2 {
+    font-size: 20px;
+  }
+
+  .produtos p {
+    font-size: 15px;
+  }
+
+  .footer {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 403px) {
+  .header img {
+    height: 40px;
+  }
+
+  .menu a {
+    font-size: 14px;
+  }
+
+  .banner h1 {
+    font-size: 20px;
+  }
+
+  .banner img {
+    height: calc(100vh - 160px);
+  }
+
+  .sobre h2 {
+    font-size: 15px;
+  }
+
+  .sobre p {
+    font-size: 12px;
+  }
+
+  .sobre img {
+    height: 150px;
+  }
+
+  .produtos h2 {
+    font-size: 15px;
+  }
+
+  .produtos p {
+    font-size: 12px;
+  }
+
+  .footer {
+    font-size: 12px;
+  }
+}
